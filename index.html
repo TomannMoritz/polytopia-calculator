@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polytopia</title>
+
+    <link rel="shortcut icon" href="img/polytopia.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="apple-touch-icon" href="img/polytopia.jpg">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <h1>Polytopia Calculator</h1>
+            <form id="form">
+                <label for="Unit" class="block">Attacking Unit</label>
+                <select name="Attack Unit" id="attackUnit" onchange="select_attacker()">
+                    <optgroup label="Units">
+                        <option value="Warrior" id="attackDefault">Warrior</option>
+                        <option value="Archer">Archer</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Rider">Rider</option>
+                        <option value="Cloak">Cloak</option>
+                        <option value="Dagger">Dagger</option>
+                        <option value="Mind Bender">Mind Bender</option>
+                        <option value="Swordsman">Swordsman</option>
+                        <option value="Catapult">Catapult</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Giant">Giant</option>
+                    </optgroup>
+
+                    <optgroup label="Ships and Boats">
+                        <option value="Boat">Boat</option>
+                        <option value="Ship">Ship</option>
+                        <option value="Battleship">Battleship</option>
+                        <option value="Dinghy">Dinghy</option>
+                        <option value="Pirate">Pirate</option>
+
+                    </optgroup>
+
+                    <optgroup label="Aquarion">
+                        <option value="Amphibian">Amphibian</option>
+                        <option value="Tridention">Tridention</option>
+                        <option value="Crab">Crab</option>
+                    </optgroup>
+
+                    <optgroup label="Elyrion">
+                        <option value="Polytaur">Polytaur</option>
+                        <option value="Navalon">Navalon</option>
+                        <option value="Dragon Egg">Dragon Egg</option>
+                        <option value="Baby Dragon">Baby Dragon</option>
+                        <option value="Fire Dragon">Fire Dragon</option>
+                    </optgroup>
+
+                    <optgroup label="Polaris">
+                        <option value="Ice Archer">Ice Archer</option>
+                        <option value="Battle Sled">Battle Sled</option>
+                        <option value="Mooni">Mooni</option>
+                        <option value="Ice Fortress">Ice Fortress</option>
+                        <option value="Gaami">Gaami</option>
+                    </optgroup>
+
+                    <optgroup label="Cymanti">
+                        <option value="Hexapod">Hexapod</option>
+                        <option value="Kiton">Kiton</option>
+                        <option value="Phychi">Phychi</option>
+                        <option value="Shaman">Shaman</option>
+                        <option value="Raychi">Raychi</option>
+                        <option value="Exida">Exida</option>
+                        <option value="Doomux">Doomux</option>
+                        <option value="Centipede">Centipede</option>
+                        <option value="Segment">Segment</option>
+                    </optgroup>
+                </select>
+
+                <br>
+                <img src="img/Warrior.webp" alt="" class="image" id="img_attacker">
+
+                <label for="HP">Health Points</label>
+                <input type="number" name="hp" id="attackerHP" required min="0" max="10" step="1" value="10">
+
+
+                <label for="Upgraded">Upgraded Unit</label>
+                <input type="checkbox" name="Upgraded" id="attackerUpgraded" style="width: 40px; height: 40px;"
+                    onclick="select_attacker()">
+
+
+
+
+                <label for="Unit" class="defender_unit">Defending Unit</label>
+                <select name="Attack Unit" id="defenderUnit" onchange="select_defender()">
+                    <optgroup label="Units">
+                        <option value="Warrior">Warrior</option>
+                        <option value="Archer">Archer</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Rider">Rider</option>
+                        <option value="Cloak">Cloak</option>
+                        <option value="Dagger">Dagger</option>
+                        <option value="Mind Bender">Mind Bender</option>
+                        <option value="Swordsman">Swordsman</option>
+                        <option value="Catapult">Catapult</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Giant">Giant</option>
+                    </optgroup>
+
+                    <optgroup label="Ships and Boats">
+                        <option value="Boat">Boat</option>
+                        <option value="Ship">Ship</option>
+                        <option value="Battleship">Battleship</option>
+                        <option value="Dinghy">Dinghy</option>
+                        <option value="Pirate">Pirate</option>
+
+                    </optgroup>
+
+                    <optgroup label="Aquarion">
+                        <option value="Amphibian">Amphibian</option>
+                        <option value="Tridention">Tridention</option>
+                        <option value="Crab">Crab</option>
+                    </optgroup>
+
+                    <optgroup label="Elyrion">
+                        <option value="Polytaur">Polytaur</option>
+                        <option value="Navalon">Navalon</option>
+                        <option value="Dragon Egg">Dragon Egg</option>
+                        <option value="Baby Dragon">Baby Dragon</option>
+                        <option value="Fire Dragon">Fire Dragon</option>
+                    </optgroup>
+
+                    <optgroup label="Polaris">
+                        <option value="Ice Archer">Ice Archer</option>
+                        <option value="Battle Sled">Battle Sled</option>
+                        <option value="Mooni">Mooni</option>
+                        <option value="Ice Fortress">Ice Fortress</option>
+                        <option value="Gaami">Gaami</option>
+                    </optgroup>
+
+                    <optgroup label="Cymanti">
+                        <option value="Hexapod">Hexapod</option>
+                        <option value="Kiton">Kiton</option>
+                        <option value="Phychi">Phychi</option>
+                        <option value="Shaman">Shaman</option>
+                        <option value="Raychi">Raychi</option>
+                        <option value="Exida">Exida</option>
+                        <option value="Doomux">Doomux</option>
+                        <option value="Centipede">Centipede</option>
+                        <option value="Segment">Segment</option>
+                    </optgroup>
+                </select>
+
+                <br>
+                <img src="img/Warrior.webp" alt="" class="image" id="img_defender">
+
+                <label for="HP">Health Points</label>
+                <input type="number" name="hp" id="defenderHP" required min="0" max="40" step="1" value="10">
+
+
+                <label for="Upgraded">Upgraded Unit</label>
+                <input type="checkbox" name="Upgraded" id="defenderUpgraded" style="width: 40px; height: 40px;"
+                    onclick="select_defender()">
+
+                <label for="Defense Bonus">Defense Bonus</label>
+                <input type="checkbox" name="defenseBonus" id="defenseBonus" style="width: 40px; height: 40px;"
+                    onclick="defense_bonus()">
+
+                <label for="City Wall">City Wall</label>
+                <input type="checkbox" name="City Wall" id="City Wall" style="width: 40px; height: 40px;"
+                    onclick="city_wall()">
+
+
+
+                <p>
+                    <button type="button" onclick="calculate();">Calcutlate</button>
+                    <button type="reset">Reset</button>
+
+                </p>
+            </form>
+        </section>
+
+
+        <section>
+            <p>
+                <label for="" id="solution">Solution:</label>
+            </p>
+
+            <div class="solution">
+                <img src="img/attack-damage.png" alt="attack-damage" height="200px">
+                <p id="attack-damage" class="solution-font"></p>
+            </div>
+
+            <div class="solution">
+                <img src="img/defense-damage.png" alt="" height="200px">
+                <p id="defense-damage" class="solution-font"></p>
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer class="links">
+        <a href="https://polytopia.fandom.com/wiki/Combat">Combat System</a>
+        <a href="https://polytopia.fandom.com/wiki/List_of_Units">Units</a>
+
+    </footer>
+</body>
+
+</html>
